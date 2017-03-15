@@ -1,12 +1,12 @@
 import React from 'react';
 
-const FilterButtons = ({filterTerm, onButtonClick}) => {
+const FilterButtons = ({filterterm, onButtonClick}) => {
   let buttonValues = ["all", "done", "incomplete"];
   let buttons = buttonValues.map((buttonValue, index) => {
     let buttonCn = "filterButton";
-    console.log("FilterButtons [filterTerm, buttonValue]", filterTerm, buttonValue);
-    if(filterTerm === buttonValue){
-    console.log("FilterButtons [filterTerm, buttonValue] true", filterTerm, buttonValue);
+    console.log("FilterButtons [filterterm, buttonValue]", filterterm, buttonValue);
+    if(filterterm === buttonValue){
+    console.log("FilterButtons [filterterm, buttonValue] true", filterterm, buttonValue);
       buttonCn += " selected";
     }
     return <button className={buttonCn} key={index} onClick={() => { onButtonClick(buttonValue) }} >{buttonValue}</button>  
@@ -15,7 +15,7 @@ const FilterButtons = ({filterTerm, onButtonClick}) => {
 }
 
 FilterButtons.propTypes ={
-  filterTerm: React.PropTypes.oneOf(['all','done', 'incomplete']),
+  filterterm: React.PropTypes.oneOf(['all','done', 'incomplete']),
   onButtonClick: React.PropTypes.func.isRequired
 }
 
